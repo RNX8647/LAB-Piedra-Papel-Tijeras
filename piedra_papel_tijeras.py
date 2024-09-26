@@ -32,10 +32,11 @@ def determina_ganador(jugada_usuario, jugada_ordenador):
 
 
 
-
-def torneo():
-    print("-"*10, "Bienvenido al juego de Piedra, Papel o Tijeras", "-"*10)
-    
+def jugar_torneo():
+    print("-"*30, "Bienvenido al juego de Piedra, Papel o Tijeras", "-"*30)
+    print("*"*80)
+    print("                     Ganará el primero en llegar a 3 puntos")
+    print("*"*80)
     puntos_usuario = 0
     puntos_ordenador = 0
     
@@ -46,19 +47,19 @@ def torneo():
         eleccion_usuario = usuario_decide_jugada()
         
         print(f"El ordenador eligió: {eleccion_ordenador}")
-        
+        print("*"*80)
         resultado = determina_ganador(eleccion_usuario, eleccion_ordenador)
         print(f"Resultado de la ronda: {resultado}")
-        
+        print("*"*80)
         if resultado == "Ganaste":
             puntos_usuario += 1
         elif resultado == "Perdiste":
             puntos_ordenador += 1
-        
+    
     if puntos_usuario == 3:
         print("ganaste la partida!")
     else:
         print("El ordenador ganó la partida...")
 
 if __name__ == "__main__":
-    torneo()
+    jugar_torneo()
